@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.youtubuapp</groupId>
+    <groupId>youtubu</groupId>
     <artifactId>youtubuApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>youtubuApp</name>
@@ -28,7 +28,16 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
