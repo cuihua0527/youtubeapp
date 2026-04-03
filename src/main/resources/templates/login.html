@@ -13,18 +13,18 @@
 <main class="login-shell">
     <section class="brand-panel">
         <p class="eyebrow">VIDEO PLATFORM</p>
-        <h1>Youtubu에 다시 접속하세요.</h1>
+        <h1>Youtubu admin console login.</h1>
         <p class="description">
-            구독 채널, 재생 목록, 업로드 현황을 한 번에 관리할 수 있는 내부 관리자 로그인 화면입니다.
+            This screen uses a simple Controller, Service, ServiceImp, and DAO flow backed by PostgreSQL.
         </p>
         <div class="feature-list">
             <div>
-                <strong>실시간 대시보드</strong>
-                <span>콘텐츠 성과와 알림을 빠르게 확인</span>
+                <strong>Layered structure</strong>
+                <span>Request handling, business logic, and persistence are separated.</span>
             </div>
             <div>
-                <strong>안전한 계정 관리</strong>
-                <span>팀 운영을 위한 계정 분리와 권한 제어</span>
+                <strong>Default account</strong>
+                <span><code>admin@youtubu.com</code> / <code>Saika0527@</code></span>
             </div>
         </div>
     </section>
@@ -32,31 +32,26 @@
     <section class="form-panel">
         <div class="form-card">
             <div class="logo">YT</div>
-            <h2>로그인</h2>
-            <p class="form-copy">이메일과 비밀번호를 입력해 계정에 접속하세요.</p>
+            <h2>Login</h2>
+            <p class="form-copy">Use the seeded admin account or a record stored in <code>admin_account</code>.</p>
 
-            <form class="login-form">
-                <label for="email">이메일</label>
-                <input id="email" name="email" type="email" placeholder="name@youtubu.com">
+            <div th:if="${message}" class="alert alert-success" th:text="${message}"></div>
+            <div th:if="${errorMessage}" class="alert alert-error" th:text="${errorMessage}"></div>
 
-                <label for="password">비밀번호</label>
-                <input id="password" name="password" type="password" placeholder="비밀번호를 입력하세요">
+            <form class="login-form" th:action="@{/login}" method="post">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" th:value="${email}" placeholder="admin@youtubu.com" autocomplete="username" required>
+
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required>
 
                 <div class="form-row">
-                    <label class="checkbox">
-                        <input type="checkbox" name="rememberMe">
-                        <span>로그인 상태 유지</span>
-                    </label>
-                    <a href="#" class="helper-link">비밀번호 찾기</a>
+                    <span class="helper-text">Successful login redirects to the dashboard.</span>
+                    <a href="#" class="helper-link">Account support</a>
                 </div>
 
-                <button type="submit">계속하기</button>
+                <button type="submit">Login</button>
             </form>
-
-            <p class="signup-copy">
-                아직 계정이 없나요?
-                <a href="#">관리자 등록 요청</a>
-            </p>
         </div>
     </section>
 </main>

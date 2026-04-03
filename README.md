@@ -1,46 +1,52 @@
 # youtubeApp
 
-Spring Boot와 Thymeleaf로 구성한 로그인 페이지 예제 프로젝트입니다.
+Spring Boot, Thymeleaf, PostgreSQL based login sample project.
 
-## 기술 스택
+## Stack
 
 - Java 17
-- Spring Boot 3
+- Spring Boot 3.3.5
 - Thymeleaf
-- Maven
+- PostgreSQL
+- Gradle
 
-## 기능
+## Features
 
-- `/login` 로그인 화면 제공
-- `/` 접속 시 `/login`으로 리다이렉트
-- 반응형 UI 적용
+- `/login` login page
+- layered flow: `Controller -> Service -> ServiceImp -> Dao`
+- PostgreSQL based admin lookup
+- redirect from `/` to `/login`
 
-## 실행 방법
+## Run
+
+If Gradle is installed locally:
 
 ```powershell
-mvn spring-boot:run
+gradle bootRun
 ```
 
-브라우저에서 아래 주소로 접속합니다.
+If you add a Gradle wrapper later:
+
+```powershell
+.\gradlew.bat bootRun
+```
+
+Open:
 
 ```text
 http://localhost:8080/login
 ```
 
-## 빌드 방법
+## Build
 
 ```powershell
-mvn -DskipTests package
+gradle build
 ```
 
-## 프로젝트 구조
+## Main Paths
 
 ```text
-src/main/java/com/youtubuapp
+src/main/java/com/saika
 src/main/resources/templates
 src/main/resources/static/css
 ```
-
-## 참고
-
-현재 로그인 화면은 UI 예제이며, 실제 인증 로직은 아직 연결되어 있지 않습니다.

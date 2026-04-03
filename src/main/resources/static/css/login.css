@@ -128,6 +128,10 @@ body {
     color: var(--muted);
 }
 
+.form-copy strong {
+    color: var(--text);
+}
+
 .login-form {
     display: grid;
     gap: 14px;
@@ -180,6 +184,29 @@ body {
     font-weight: 700;
 }
 
+.helper-text {
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.alert {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.alert-success {
+    background: rgba(42, 124, 76, 0.12);
+    color: #205b38;
+}
+
+.alert-error {
+    background: rgba(214, 59, 31, 0.12);
+    color: #9f2813;
+}
+
 .login-form button {
     margin-top: 8px;
     padding: 16px;
@@ -198,6 +225,60 @@ body {
     box-shadow: 0 16px 28px rgba(214, 59, 31, 0.28);
 }
 
+.dashboard-body {
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.dashboard-shell {
+    width: min(920px, 100%);
+}
+
+.dashboard-card {
+    padding: 40px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow);
+}
+
+.dashboard-card h1 {
+    margin: 12px 0 16px;
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    line-height: 1;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 28px;
+}
+
+.dashboard-grid article {
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(214, 59, 31, 0.08);
+}
+
+.dashboard-grid strong,
+.dashboard-grid span {
+    display: block;
+}
+
+.dashboard-grid span {
+    margin-top: 8px;
+    color: var(--muted);
+}
+
+.logout-link {
+    display: inline-flex;
+    margin-top: 28px;
+    color: var(--accent);
+    font-weight: 800;
+    text-decoration: none;
+}
+
 @media (max-width: 900px) {
     .login-shell {
         grid-template-columns: 1fr;
@@ -210,6 +291,10 @@ body {
 
     .form-panel {
         padding-top: 0;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
     }
 }
 
